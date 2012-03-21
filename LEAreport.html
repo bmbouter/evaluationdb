@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Race to the Top School Level Activities Report-Region 5</title>
+
+        <!-- Le styles -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="reportstyle.css" media="screen" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="report.js"></script>
+        <script type="text/javascript" src="https://spreadsheets.google.com/feeds/list/0AnZsJpNttyrZdDFPQUJjRWJxZTdsSG5mQ3hsSkktNWc/od6/public/basic?alt=json-in-script&callback=parseGoogleSpreadsheet"></script>
+
+        <script type="text/javascript">
+            $(window).bind("load", function() {
+              var leaParam = getURLParameter("LEA");
+              if (leaParam !== null) {
+                  rows = rows.filter(function(val) {
+                      if (val.leaname === leaParam) {
+                          return true; 
+                      }
+                  });
+              }
+              render();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="data">
+            <div id="title" style="background: #666666">
+                <h1 style="color:white">Race to the Top School Level Activities Report-Region 5<h1>
+            </div>
+            <table id="data_table" class="table">
+            <thead>
+                <tr style="background: #183560">
+                    <!--<th style="color: white">LEA Name</th>-->
+                    <th style="color: white">School Name</th>
+                    <th style="color: white">School Number</th>
+                    <th style="color: white">Omnibus Survey</th>
+                    <th style="color: white">PD</th>
+                    <th style="color: white">RLA</th>
+                    <th style="color: white">STEM</th>
+                    <th style="color: white">TLE</th>
+                    <th style="color: white">DST</th>
+                    <th colspan="4">
+                        <table class="table">
+                            <th class="nopadding" style="color: white" border-top-width>Supply and Equitable Distribution of Teachers</th>
+                        </table>
+                        <table class="table">
+                            <thead>
+                                <th class="nopadding" style="color: white">NCTC/TFA</th>
+                                <th class="nopadding" style="color: white">NCVPS</th>
+                                <th class="nopadding" style="color: white">Strategic Staffing</th>
+                                <th class="nopadding" style="color: white">NTSP</th>
+                            </thead>
+                        </table>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>
+        </div>
+    </body>
+</html>

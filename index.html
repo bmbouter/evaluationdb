@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Race to the Top School Level Activities Report-Region 5</title>
+
+        <!-- Le styles -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="reportstyle.css" media="screen" />
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="report.js"></script>
+        <script type="text/javascript" src="https://spreadsheets.google.com/feeds/list/0AnZsJpNttyrZdDFPQUJjRWJxZTdsSG5mQ3hsSkktNWc/od6/public/basic?alt=json-in-script&callback=parseGoogleSpreadsheet"></script>
+
+        <script type="text/javascript">
+            var populateSelectOptions = function() {
+              var leaSelect = document.getElementById('leaSelect');
+              var rows_by_LEAname = collectByLeaName();
+              for(var leaname in rows_by_LEAname) {
+                  var optn = document.createElement("option");
+                  optn.label = leaname;
+                  optn.value = leaname;
+                  leaSelect.options.add(optn);
+              }
+            };
+
+            $(window).bind("load", function() {
+                populateSelectOptions();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="controls" class="hero-unit" style="width: 400px;margin: 50px auto;">
+            <div>
+                <form action="LEAreport.html" method="get">
+                    <h2>Select an LEA from the list below</h2>
+                    <select id="leaSelect" name="LEA" style="margin-top: 10px"></select>
+                    <input type="submit" value="Generate Report" class="btn btn-primary"/>
+                </form>
+            </div>
+            <h2>-OR-</h2>
+            <div>
+                <form action="LEAreport.html" method="post">
+                    <input type="submit" value="Show All LEAs" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

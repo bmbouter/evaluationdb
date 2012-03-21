@@ -1,0 +1,27 @@
+body .nopadding {
+    padding: 0px;
+}
+
+body .greenborder {
+    border-color: #778b3c;
+}
+
+.topborder {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.rightborder {
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.bottomborder {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.leftborder {
+    border-left-width: 1px;
+    border-left-style: solid;
+}
