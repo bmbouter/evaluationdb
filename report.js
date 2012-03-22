@@ -70,6 +70,7 @@ var render = function() {
         var tr = document.createElement('tr');
         var td = document.createElement('td');
         td.style.border = "0px";
+        td.colSpan = 12;
         var leaNameText = document.createElement('h2');
         leaNameText.style.color = "#466089";
         leaNameText.appendChild(document.createTextNode(leaname + ' Schools'));
@@ -88,11 +89,15 @@ var render = function() {
             }
     
             var schoolname = document.createElement('td');
-            schoolname.appendChild(document.createTextNode(rows_by_LEAname[leaname][i].schoolname));
+            var hTag = document.createElement('h3');
+            hTag.appendChild(document.createTextNode(rows_by_LEAname[leaname][i].schoolname));
+            schoolname.appendChild(hTag);
             tr.appendChild(schoolname);
     
             var schoolnumber = document.createElement('td');
-            schoolnumber.appendChild(document.createTextNode(rows_by_LEAname[leaname][i].schoolnumber));
+            var hTag = document.createElement('h3');
+            hTag.appendChild(document.createTextNode(rows_by_LEAname[leaname][i].schoolnumber));
+            schoolnumber.appendChild(hTag);
             tr.appendChild(schoolnumber);
     
             var omnibussurvey = document.createElement('td');
