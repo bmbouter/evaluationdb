@@ -101,55 +101,61 @@ var render = function() {
             tr.appendChild(schoolnumber);
     
             var omnibussurvey = document.createElement('td');
+            omnibussurvey.className = "centercell"
             omnibussurveyCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].omnibussurvey);
             omnibussurvey.appendChild(omnibussurveyCheckbox);
             tr.appendChild(omnibussurvey);
     
             var pd = document.createElement('td');
+            pd.className = "centercell"
             pdCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].pd);
             pd.appendChild(pdCheckbox);
             tr.appendChild(pd);
     
             var rla = document.createElement('td');
+            rla.className = "centercell"
             rlaCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].rla);
             rla.appendChild(rlaCheckbox);
             tr.appendChild(rla);
     
             var stem = document.createElement('td');
+            stem.className = "centercell"
             stemCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].stem);
             stem.appendChild(stemCheckbox);
             tr.appendChild(stem);
     
             var tle = document.createElement('td');
+            tle.className = "centercell"
             tleCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].tle);
             tle.appendChild(tleCheckbox);
             tr.appendChild(tle);
     
             var dst = document.createElement('td');
+            dst.className = "centercell"
             dstCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].dst);
             dst.appendChild(dstCheckbox);
             tr.appendChild(dst);
     
             var nctctfa = document.createElement('td');
-            nctctfa.className = "greenborder leftborder topborder bottomborder"
+            nctctfa.className = "greenborder leftborder topborder bottomborder centercell"
             nctctfaCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].nctctfa);
             nctctfa.appendChild(nctctfaCheckbox);
             tr.appendChild(nctctfa);
     
             var ncvps = document.createElement('td');
-            ncvps.className = "greenborder topborder bottomborder"
+            ncvps.className = "greenborder topborder bottomborder centercell"
             ncvpsCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].ncvps);
             ncvps.appendChild(ncvpsCheckbox);
             tr.appendChild(ncvps);
     
             var strategicstaffing = document.createElement('td');
-            strategicstaffing.className = "greenborder topborder bottomborder"
+            strategicstaffing.className = "greenborder topborder bottomborder centercell"
             strategicstaffingCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].strategicstaffing);
             strategicstaffing.appendChild(strategicstaffingCheckbox);
             tr.appendChild(strategicstaffing);
     
             var ntsp = document.createElement('td');
-            ntsp.className = "greenborder topborder bottomborder rightborder"
+            ntsp.className = "greenborder topborder bottomborder rightborder centercell"
             ntspCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].ntsp);
             ntsp.appendChild(ntspCheckbox);
             tr.appendChild(ntsp);

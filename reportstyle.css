@@ -2,6 +2,11 @@ body .nopadding {
     padding: 0px;
 }
 
+body .centercell {
+    text-align: center;
+    vertical-align: middle;
+}
+
 body .greenborder {
     border-color: #778b3c;
 }
