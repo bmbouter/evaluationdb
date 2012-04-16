@@ -20,7 +20,7 @@
               for(var leaname in rows_by_LEAname) {
                   var optn = document.createElement("option");
                   optn.label = leaname;
-                  optn.value = leaname;
+                  optn.appendChild(document.createTextNode(leaname));
                   leaSelect.options.add(optn);
               }
             };
