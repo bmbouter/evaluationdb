@@ -1,5 +1,5 @@
 var rows = [];
-var terms = ["schoolname", "schoolnumber", "omnibussurvey", "pd", "rla", "stem", "tle", "dst", "nctctfa", "ncvps", "strategicstaffing", "ntsp"];
+var terms = ["schoolname", "schoolnumber", "spring2012tripodstudentsurveypilotdpi", "omnibussurvey", "pd", "rla", "stem", "tle", "dst", "nctctfa", "ncvps", "strategicstaffing", "ntsp"];
 
 var getURLParameter = function(name) {
     return decodeURIComponent((RegExp('[?|&]' + name + '=' + '(.+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
@@ -40,7 +40,7 @@ var buildCheckedTextbox = function(data) {
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     $(checkbox).click(function(){return false;});
-    if (data === "X") {
+    if (data === "TRUE") {
         checkbox.checked = "True";
     }
     return checkbox;
@@ -99,6 +99,12 @@ var render = function() {
             hTag.appendChild(document.createTextNode(rows_by_LEAname[leaname][i].schoolnumber));
             schoolnumber.appendChild(hTag);
             tr.appendChild(schoolnumber);
+
+            var spring2012tripodstudentsurveypilotdpi = document.createElement('td');
+            spring2012tripodstudentsurveypilotdpi.className = "centercell"
+            spring2012tripodstudentsurveypilotdpiCheckbox = buildCheckedTextbox(rows_by_LEAname[leaname][i].spring2012tripodstudentsurveypilotdpi);
+            spring2012tripodstudentsurveypilotdpi.appendChild(spring2012tripodstudentsurveypilotdpiCheckbox);
+            tr.appendChild(spring2012tripodstudentsurveypilotdpi);
     
             var omnibussurvey = document.createElement('td');
             omnibussurvey.className = "centercell"
