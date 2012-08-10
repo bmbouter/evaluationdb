@@ -1,0 +1,11 @@
+.btn.btn-primary {float: right;}
+
+.info-wrap {display: none;}
+.info-wrap span {display: block; margin: 0 0 2px 6px;}
+.info-wrap div {margin-bottom: 10px;}
+.info-wrap div.border {border: 1px solid #000;}
+.info-wrap div.border label {position: relative; top: -9px; left: 6px; display: inline-block; padding: 0 4px; background-color: #EEE; margin-bottom: 0;}
+.info-wrap .name {font-size: 16px; margin-left: 0;}
+
+.loader {margin: 0 auto; display: block;}
+.form-input {display: none;}

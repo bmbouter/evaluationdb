@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ContactsDB</title>
+
+        <!-- Le styles -->
+        <link href="styles.css" rel="stylesheet">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="select2/select2.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <script type="text/template" class="single contacts-db" id="single-template">
+            <div class="hero-unit" style="width: 400px;margin: 50px auto;">
+                <form action="" onsubmit="return false;">
+                    <h2><%= title %></h2>
+                    <div class="form-input" id="wrap-<%= name %>">
+                        <select id="select-<%= name %>" name="<%= name %>" style="margin-top: 10px"></select>
+                        <input type="submit" value="Generate Report" class="btn btn-primary"/>
+                    </div>
+                    <img src="img/ajax-load.gif" id="loader-<%= name %>" class="loader">
+                </form>
+                <div class="info-wrap" id="wrap-<%= name %>">
+                    <div class="contact">
+                        <span class="name"></span>
+                        <span class="email"></span>
+                        <span class="phone"></span>
+                    </div>
+                    <div class="leainfo border">
+                        <label>LEA Info</label>
+                        <span class="leanum"></span>
+                        <span class="learegion"></span>
+                    </div>
+                    <div class="address border">
+                        <label>Address</label>
+                        <span class="address1"></span>
+                        <span class="address2"></span>
+                        <span class="addressinfo"></span>
+                    </div>
+                </div> 
+            </div>
+        </script>
+
+        <div id="contactdbs">
+
+        </div>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="select2/select2.min.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/contactsdb.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
