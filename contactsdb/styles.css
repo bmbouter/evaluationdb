@@ -1,3 +1,13 @@
+#content {width: 520px; margin: 50px auto 0;}
+
+#tabs {list-style-type: none; margin: 0 0 0 10px; overflow: hidden;}
+#tabs li {float: left; width: 125px; margin-right: 1px; background-color: #CCC; border-radius: 5px 5px 0 0; text-align: center;}
+#tabs li.selected {background-color: #EEE;}
+
+#contactdbs {overflow: hidden;}
+#contactdbs section {display: none;}
+#contactdbs section:target {display: block !important;}
+
 .btn.btn-primary {float: right;}
 
 .info-wrap {display: none;}
@@ -9,3 +19,5 @@
 
 .loader {margin: 0 auto; display: block;}
 .form-input {display: none;}
+
+.dataTables_wrapper {overflow-x: scroll;}

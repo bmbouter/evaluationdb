@@ -7,12 +7,13 @@
         <!-- Le styles -->
         <link href="styles.css" rel="stylesheet">
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="jquery.dataTables.css" rel="stylesheet">
         <link href="select2/select2.css" rel="stylesheet">
 
     </head>
     <body>
         <script type="text/template" class="single contacts-db" id="single-template">
-            <div class="hero-unit" style="width: 400px;margin: 50px auto;">
+            <div class="hero-unit" style="width: 400px;margin: 0 auto 50px;">
                 <form action="" onsubmit="return false;">
                     <h2><%= title %></h2>
                     <div class="form-input" id="wrap-<%= name %>">
@@ -21,7 +22,7 @@
                     </div>
                     <img src="img/ajax-load.gif" id="loader-<%= name %>" class="loader">
                 </form>
-                <div class="info-wrap" id="wrap-<%= name %>">
+                <div class="info-wrap" id="infowrap-<%= name %>">
                     <div class="contact">
                         <span class="name"></span>
                         <span class="email"></span>
@@ -42,15 +43,42 @@
             </div>
         </script>
 
-        <div id="contactdbs">
+        <script type="text/template" class="double contacts-db" id="double-template">
+            <div class="hero-unit" style="width: 400px;margin: 0 auto 50px;">
+                <form action="" onsubmit="return false;">
+                    <h2><%= title %></h2>
+                    <div class="form-input" id="wrap-<%= name %>">
+                        <label>LEA Name:</label><select id="select-<%= name %>" name="<%= name %>" class="schools" style="margin-top: 10px"></select>
+                        <label>LEA Region:</label><select id="select-<%= name %>-region" name="<%= name %>-region" class="regions" style="margin-top: 10px"></select>
+                        <br />
+                        <input type="submit" value="Generate Report" class="btn btn-primary"/>
+                    </div>
+                    <img src="img/ajax-load.gif" id="loader-<%= name %>" class="loader">
+                </form>
+                <div class="info-wrap" id="infowrap-<%= name %>">
+                    <table id="table-<%= name %>">
+                        
+                    </table>
+                </div>
+            </div>
+        </script>
 
+        <div id='content'>
+            <ul id='tabs'>
+                <li class='charterdb'><a href='#charterdb'>Charter School Contact Database</a></li>
+                <li class='leadb'><a href='#leadb'>LEA Contact Database</a></li>
+                <li class='schoolcontactdb'><a href='#schoolcontactdb'>School Contact Database</a></li>
+            </ul>
+            <div id="contactdbs">
+
+            </div>
         </div>
-
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="select2/select2.min.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="js/contactsdb.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
