@@ -8,6 +8,8 @@ var parseCharterSpreadsheet = function(data) {
 	var entries = feed.entry || [];
 	var data    = new Array();
 
+	$("#select-charterschl").append("<option value='select'>Select...</option>");
+
 	for (var i = 0; i < entries.length; i++) {
 		var option   = document.createElement('option');
 		option.value = i;
@@ -26,6 +28,8 @@ var parseLEASpreadsheet = function(data) {
 	var feed    = data.feed;
 	var entries = feed.entry || [];
 	var data    = new Array();
+
+	$("#select-leaschl").append("<option value='select'>Select...</option>");
 
 	for (var i = 0; i < entries.length; i++) {
 		var option   = document.createElement('option');
@@ -153,7 +157,7 @@ var CharterSchoolDBView = Backbone.View.extend({
 	className: "contacts-db",
 	template:  $("#single-template").html(),
 	events:{
-		"click .btn.btn-primary" : "generate"
+		"change select" : "generate"
 	},
 	initialize: function() {
 		this.model = new SingleModel({name: 'charterschl', title: 'Charter School Contact Database', gid: '2'});
@@ -204,7 +208,7 @@ var LEADBView = Backbone.View.extend({
 	className: "contacts-db",
 	template:  $("#single-template").html(),
 	events:{
-		"click .btn.btn-primary" : "generate"
+		"change select" : "generate"
 	},
 	initialize: function() {
 		this.model = new SingleModel({name: 'leaschl', title: 'LEA Contact Database', gid: '1'});
@@ -255,7 +259,7 @@ var SchoolContactDBView = Backbone.View.extend({
 	className: "contacts-db",
 	template:  $("#double-template").html(),
 	events:{
-		"click .btn.btn-primary" : "generate"
+		"change select" : "generate"
 	},
 	initialize: function() {
 		this.model = new SingleModel({name: 'schoolcontactdb', title: 'School Contact Database', gid: '3'});
@@ -320,7 +324,6 @@ var SchoolContactDBView = Backbone.View.extend({
 		$(this.el).find('select').select2("val", "All");
 		this.$el.find('.info-wrap').fadeOut();
 		if (this.model.get('tableInitialized') == true) {
-			console.log('clearing table');
 			$("#table-schoolcontactdb").dataTable().fnClearTable();
 		}
 	},
@@ -363,26 +366,6 @@ var Workspace = Backbone.Router.extend({
 		AppController.leaDB.hideInfo();
 		AppController.schoolDB.hideInfo();
 
-		switch (db) {
-			case 'charterdb':
-				var charter = AppController.charterDB.model;
-				if (!charter.get('loaded')) charter.loadDB('parseCharterSpreadsheet');
-				break;
-
-			case 'leadb':
-				var lea = AppController.leaDB.model;
-				if (!lea.get('loaded')) lea.loadDB('parseLEASpreadsheet');
-				break;
-
-			case 'schoolcontactdb':
-				var contacts = AppController.schoolDB.model;
-				if (!contacts.get('loaded')) contacts.loadDB('parseContactSpreadsheet');
-				break;
-
-			default:
-				break;
-		}
-
 		$('#tabs li').removeClass('selected');
 		$('#tabs .' + db).addClass('selected');
 	}
@@ -395,6 +378,10 @@ var AppController = {
 		this.charterDB = new CharterSchoolDBView();
 		this.leaDB     = new LEADBView();
 		this.schoolDB  = new SchoolContactDBView();
+
+		if (!this.charterDB.model.get('loaded')) this.charterDB.model.loadDB('parseCharterSpreadsheet');
+		if (!this.leaDB.model.get('loaded')) this.leaDB.model.loadDB('parseLEASpreadsheet');
+		if (!this.schoolDB.model.get('loaded')) this.schoolDB.model.loadDB('parseContactSpreadsheet');
 
 		this.view.append(this.charterDB.el);
 		this.view.append(this.leaDB.el);
