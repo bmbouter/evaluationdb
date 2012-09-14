@@ -1,5 +1,5 @@
 var db           = "https://spreadsheets.google.com/feeds/list/0AnZsJpNttyrZdElvZ0tXRXZIWHdkR2xTbkpnZmNJa1E/";
-var terms        = ["leaname", "leano", "schoolleadershipfirst", "schoolleadershiplast", "superemail", "superintendenttitle", "phoneofficearea", "phoneofficeexch", "phoneofficeline", "learegion", "leadrtttcoordinatorname", "leadrtttcoordinatortitle", "leadrtttcoordinatoremail", "leadrtttcoordinatorphone", "addressline1", "addressline2", "city", "state", "zipcode5"];
+var terms        = ["leaname", "leano", "schoolleadershipfirst", "schoolleadershiplast", "superemail", "schoolleadershiptitle", "phoneofficearea", "phoneofficeexch", "phoneofficeline", "learegion", "leadrtttcoordinatorname", "leadrtttcoordinatortitle", "leadrtttcoordinatoremail", "leadrtttcoordinatorphone", "addressline1", "addressline2", "city", "state", "zipcode5"];
 var contactTerms = ["learegion", "leaname", "leano", "schoolname", "schoolnumber", "principalfirstname", "principallastname", "principalemail", "schoperationalstatusdesc", "phoneofficearea", "phoneofficeexch", "phoneofficeline", "addressline1", "addressline2", "city", "state", "zipcode5"];
 
 var parseCharterSpreadsheet = function(data) {
@@ -180,7 +180,7 @@ var CharterSchoolDBView = Backbone.View.extend({
 		wrap.find('.leadrttphone').text(info.leadrtttcoordinatorphone || '-');
 
 		wrap.find('.name').text(info.schoolleadershipfirst + ' ' + info.schoolleadershiplast);
-		wrap.find('.title').text(info.superintendenttitle);
+		wrap.find('.title').text(info.schoolleadershiptitle);
 		wrap.find('.phone').text('(' + info.phoneofficearea + ') ' + info.phoneofficeexch + '-' + info.phoneofficeline);
 		wrap.find('.email').html('<a href="mailto:' + info.superemail + '">' + info.superemail + '</a>');
 		
@@ -237,7 +237,7 @@ var LEADBView = Backbone.View.extend({
 		wrap.find('.leadrttphone').text(info.leadrtttcoordinatorphone || '-');
 
 		wrap.find('.name').text(info.schoolleadershipfirst + ' ' + info.schoolleadershiplast);
-		wrap.find('.title').text(info.superintendenttitle);
+		wrap.find('.title').text(info.schoolleadershiptitle);
 		wrap.find('.phone').text('(' + info.phoneofficearea + ') ' + info.phoneofficeexch + '-' + info.phoneofficeline);
 		wrap.find('.email').html('<a href="mailto:' + info.superemail + '">' + info.superemail + '</a>');
 		
