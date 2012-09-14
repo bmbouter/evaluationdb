@@ -24,8 +24,16 @@
                 <div class="info-wrap" id="infowrap-<%= name %>">
                     <div class="contact">
                         <span class="name"></span>
+                        <span class="title"></span>
                         <span class="email"></span>
                         <span class="phone"></span>
+                    </div>
+                    <div class="learttcoor border">
+                        <label>Lead RttT Coordinator</label>
+                        <span class="leadrttname"></span>
+                        <span class="leadrtttitle"></span>
+                        <span class="leadrttemail"></span>
+                        <span class="leadrttphone"></span>
                     </div>
                     <div class="leainfo border">
                         <label>LEA Info</label>
@@ -48,15 +56,28 @@
                     <h2><%= title %></h2>
                     <div class="form-input" id="wrap-<%= name %>">
                         <label>LEA Name:</label><select id="select-<%= name %>" name="<%= name %>" class="schools" style="margin-top: 10px"></select>
-                        <label>LEA Region:</label><select id="select-<%= name %>-region" name="<%= name %>-region" class="regions" style="margin-top: 10px"></select>
+                        <label>School Name:</label><select id="select-<%= name %>-school" name="<%= name %>-school" class="school-names" style="margin-top: 10px"></select>
                         <br />
                     </div>
                     <img src="img/ajax-load.gif" id="loader-<%= name %>" class="loader">
                 </form>
                 <div class="info-wrap" id="infowrap-<%= name %>">
-                    <table id="table-<%= name %>">
-                        
-                    </table>
+                    <div class="contact">
+                        <span class="name"></span>
+                        <span class="email"></span>
+                        <span class="phone"></span>
+                    </div>
+                    <div class="leainfo border">
+                        <label>LEA Info</label>
+                        <span class="leanum"></span>
+                        <span class="learegion"></span>
+                    </div>
+                    <div class="address border">
+                        <label>Address</label>
+                        <span class="address1"></span>
+                        <span class="address2"></span>
+                        <span class="addressinfo"></span>
+                    </div>
                 </div>
             </div>
         </script>
@@ -76,7 +97,7 @@
         <script type="text/javascript" src="select2/select2.min.js"></script>
         <script type="text/javascript" src="js/underscore-min.js"></script>
         <script type="text/javascript" src="js/backbone-min.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <!--<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>//-->
         <script type="text/javascript" src="js/contactsdb.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
