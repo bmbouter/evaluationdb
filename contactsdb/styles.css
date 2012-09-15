@@ -6,7 +6,6 @@
 
 #contactdbs {overflow: hidden;}
 #contactdbs section {display: none;}
-#contactdbs section:target {display: block !important;}
 
 #charterdb .learttcoor {display: none;}
 

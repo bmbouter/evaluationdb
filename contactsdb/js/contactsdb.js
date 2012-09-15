@@ -355,11 +355,16 @@ var Workspace = Backbone.Router.extend({
 		"*action": "switchDB",
 	},
 	homepage:function() {
-		window.location = "#charterdb";
+		window.location = "#charterdb-tab";
 	},
 	switchDB: function(db) {
+		var section = db.substr(0, db.indexOf('-'));
+
 		$('#tabs li').removeClass('selected');
-		$('#tabs .' + db).addClass('selected');
+		$('#tabs .' + section).addClass('selected');
+
+		$('#contactdbs section').css('display', 'none');
+		$('#' + section).css('display', 'block');
 	}
 });
 
